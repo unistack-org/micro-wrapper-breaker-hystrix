@@ -1,10 +1,10 @@
 package hystrix
 
 import (
-	"github.com/afex/hystrix-go/hystrix"
-	"github.com/micro/go-micro/v2/client"
-
 	"context"
+
+	"github.com/afex/hystrix-go/hystrix"
+	"github.com/unistack-org/micro/v3/client"
 )
 
 type clientWrapper struct {
@@ -20,6 +20,6 @@ func (c *clientWrapper) Call(ctx context.Context, req client.Request, rsp interf
 // NewClientWrapper returns a hystrix client Wrapper.
 func NewClientWrapper() client.Wrapper {
 	return func(c client.Client) client.Client {
-		return &clientWrapper{c}
+		return &clientWrapper{Client: c}
 	}
 }
