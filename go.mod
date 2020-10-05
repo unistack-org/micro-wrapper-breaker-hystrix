@@ -1,4 +1,4 @@
-module github.com/unistack-org/micro-wrapper-hystrix
+module github.com/unistack-org/micro-wrapper-breaker-hystrix
 
 go 1.13
 
